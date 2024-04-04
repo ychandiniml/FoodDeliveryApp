@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:fooddeliveryapp/pages/bottomnav.dart';
 import 'package:fooddeliveryapp/pages/home.dart';
 import 'package:fooddeliveryapp/pages/login.dart';
+
 import 'package:fooddeliveryapp/pages/signup.dart';
 import 'package:fooddeliveryapp/pages/onboard.dart';
 import 'package:firebase_core/firebase_core.dart';
-// import 'package:fooddeliveryapp/widget/app_constant.dart';
+import 'package:fooddeliveryapp/widget/app_constant.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Stripe.publishableKey = publishableKey;
   await Firebase.initializeApp();
   runApp(MyApp());
 }
